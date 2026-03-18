@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    INSTRUCTIONS:
+    Open your existing AndroidManifest.xml and update the <application> block.
+
+    1. Add SplashActivity as the LAUNCHER (main entry point)
+    2. Change MainActivity to NOT be the launcher anymore
+    3. Add DashboardActivity
+
+    Replace your existing <application> activities section with this:
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+
+        <!-- ✅ SPLASH — this is now the app entry point -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.WaitWise.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ✅ LOGIN — no longer the launcher -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WaitWise.NoActionBar" />
+
+        <!-- ✅ DASHBOARD -->
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WaitWise.NoActionBar" />
+
+    </application>
+
+</manifest>
