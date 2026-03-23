@@ -1,55 +1,32 @@
 package com.example.waitwise
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.*
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.addCallback
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.coroutines.*
 
-class RegisterActivity : AppCompatActivity() {
+class ForgotPasswordActivity : AppCompatActivity() {
 
-    private lateinit var tilName:            TextInputLayout
-    private lateinit var tilStudentId:       TextInputLayout
-    private lateinit var tilEmail:           TextInputLayout
-    private lateinit var tilPassword:        TextInputLayout
-    private lateinit var tilConfirmPassword: TextInputLayout
-    private lateinit var etName:             TextInputEditText
-    private lateinit var etStudentId:        TextInputEditText
-    private lateinit var etEmail:            TextInputEditText
-    private lateinit var etPassword:         TextInputEditText
-    private lateinit var etConfirmPassword:  TextInputEditText
-    private lateinit var btnRegister:        android.widget.Button
-    private lateinit var btnBack:            ImageButton
-    private lateinit var tvLogin:            TextView
-    private lateinit var tvPickPhoto:        TextView
-    private lateinit var btnPickPhoto:       ImageView
-    private lateinit var ivAvatar:           ImageView
-    private lateinit var progressBar:        ProgressBar
-    private lateinit var tvErrorMessage:     TextView
+    private lateinit var tilEmail:        TextInputLayout
+    private lateinit var etEmail:         TextInputEditText
+    private lateinit var btnSendReset:    android.widget.Button
+    private lateinit var tvBackToLogin:   TextView
+    private lateinit var progressBar:     ProgressBar
+    private lateinit var tvErrorMessage:  TextView
+    private lateinit var tvSuccessMessage: TextView
 
-    private val registerScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
-
-    // Photo picker
-    private val pickImage = registerForActivityResult(
-        ActivityResultContracts.GetContent()
-    ) { uri: Uri? ->
-        uri?.let {
-            ivAvatar.setImageURI(it)
-            ivAvatar.scaleType = ImageView.ScaleType.CENTER_CROP
-        }
-    }
+    private val scope = CoroutineScope(Dispatchers.Main + SupervisorJob())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register)
+        setContentView(R.layout.activity_forgot_password)
 
         initViews()
         setupListeners()
@@ -60,114 +37,53 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        tilName            = findViewById(R.id.tilName)
-        tilStudentId       = findViewById(R.id.tilStudentId)
-        tilEmail           = findViewById(R.id.tilEmail)
-        tilPassword        = findViewById(R.id.tilPassword)
-        tilConfirmPassword = findViewById(R.id.tilConfirmPassword)
-        etName             = findViewById(R.id.etName)
-        etStudentId        = findViewById(R.id.etStudentId)
-        etEmail            = findViewById(R.id.etEmail)
-        etPassword         = findViewById(R.id.etPassword)
-        etConfirmPassword  = findViewById(R.id.etConfirmPassword)
-        btnRegister        = findViewById(R.id.btnRegister)
-        btnBack            = findViewById(R.id.btnBack)
-        tvLogin            = findViewById(R.id.tvLogin)
-        tvPickPhoto        = findViewById(R.id.tvPickPhoto)
-        btnPickPhoto       = findViewById(R.id.btnPickPhoto)
-        ivAvatar           = findViewById(R.id.ivAvatar)
-        progressBar        = findViewById(R.id.progressBar)
-        tvErrorMessage     = findViewById(R.id.tvErrorMessage)
+        tilEmail         = findViewById(R.id.tilEmail)
+        etEmail          = findViewById(R.id.etEmail)
+        btnSendReset     = findViewById(R.id.btnSendReset)
+        tvBackToLogin    = findViewById(R.id.tvBackToLogin)
+        progressBar      = findViewById(R.id.progressBar)
+        tvErrorMessage   = findViewById(R.id.tvErrorMessage)
+        tvSuccessMessage = findViewById(R.id.tvSuccessMessage)
     }
 
     private fun setupListeners() {
-        btnBack.setOnClickListener      { navigateToLogin() }
-        tvLogin.setOnClickListener      { navigateToLogin() }
-        btnPickPhoto.setOnClickListener { pickImage.launch("image/*") }
-        tvPickPhoto.setOnClickListener  { pickImage.launch("image/*") }
-        btnRegister.setOnClickListener  { attemptRegister() }
+        btnSendReset.setOnClickListener  { attemptReset() }
+        tvBackToLogin.setOnClickListener { navigateToLogin() }
 
-        // Clear errors on typing
-        listOf(etName, etStudentId, etEmail, etPassword, etConfirmPassword).forEach { field ->
-            field.addTextChangedListener(object : TextWatcher {
-                override fun afterTextChanged(s: Editable?) { hideError() }
-                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-            })
-        }
+        etEmail.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                tilEmail.error = null
+                hideMessages()
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
     }
 
-    private fun validateInputs(
-        name: String, studentId: String,
-        email: String, password: String, confirmPassword: String
-    ): Boolean {
-        var isValid = true
+    private fun attemptReset() {
+        val email = etEmail.text.toString().trim()
 
-        if (name.isEmpty()) {
-            tilName.error = "Full name is required"; isValid = false
-        }
-        if (studentId.isEmpty()) {
-            tilStudentId.error = "Student ID is required"; isValid = false
-        }
         if (email.isEmpty()) {
-            tilEmail.error = "Email is required"; isValid = false
-        } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            tilEmail.error = "Enter a valid email address"; isValid = false
+            tilEmail.error = "Email is required"; return
         }
-        if (password.isEmpty()) {
-            tilPassword.error = "Password is required"; isValid = false
-        } else if (password.length < 6) {
-            tilPassword.error = "Password must be at least 6 characters"; isValid = false
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            tilEmail.error = "Enter a valid email address"; return
         }
-        if (confirmPassword.isEmpty()) {
-            tilConfirmPassword.error = "Please confirm your password"; isValid = false
-        } else if (password != confirmPassword) {
-            tilConfirmPassword.error = "Passwords do not match"; isValid = false
-        }
-
-        return isValid
-    }
-
-    private fun attemptRegister() {
-        val name            = etName.text.toString().trim()
-        val studentId       = etStudentId.text.toString().trim()
-        val email           = etEmail.text.toString().trim()
-        val password        = etPassword.text.toString().trim()
-        val confirmPassword = etConfirmPassword.text.toString().trim()
-
-        if (!validateInputs(name, studentId, email, password, confirmPassword)) return
 
         showLoading(true)
-        hideError()
+        hideMessages()
 
-        registerScope.launch {
+        scope.launch {
             try {
                 delay(1500) // simulate API call
 
                 // TODO: Replace with real Retrofit API call
-                // val response = ApiClient.authService.register(RegisterRequest(...))
-                // session.saveSession(response.token, response.name, response.email, response.role)
+                // ApiClient.authService.forgotPassword(ForgotPasswordRequest(email))
 
-                // Mock success
-                val session = SessionManager(this@RegisterActivity)
-                session.saveSession(
-                    token = "mock_token_${System.currentTimeMillis()}",
-                    name  = name,
-                    email = email,
-                    role  = "student"
-                )
-
-                Toast.makeText(
-                    this@RegisterActivity,
-                    "Account created! Welcome, $name!",
-                    Toast.LENGTH_SHORT
-                ).show()
-
-                startActivity(Intent(this@RegisterActivity, DashboardActivity::class.java))
-                finish()
+                showSuccess("Reset link sent to $email. Please check your inbox.")
 
             } catch (e: Exception) {
-                showError("Registration failed. Please try again.")
+                showError("Failed to send reset link. Please try again.")
             } finally {
                 showLoading(false)
             }
@@ -180,22 +96,30 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun showLoading(isLoading: Boolean) {
-        progressBar.visibility  = if (isLoading) View.VISIBLE else View.GONE
-        btnRegister.isEnabled   = !isLoading
-        btnRegister.text        = if (isLoading) "" else "Create Account"
+        progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+        btnSendReset.isEnabled = !isLoading
+        btnSendReset.text      = if (isLoading) "" else "Send Reset Link"
     }
 
     private fun showError(message: String) {
         tvErrorMessage.text       = message
         tvErrorMessage.visibility = View.VISIBLE
+        tvSuccessMessage.visibility = View.GONE
     }
 
-    private fun hideError() {
-        tvErrorMessage.visibility = View.GONE
+    private fun showSuccess(message: String) {
+        tvSuccessMessage.text       = message
+        tvSuccessMessage.visibility = View.VISIBLE
+        tvErrorMessage.visibility   = View.GONE
+    }
+
+    private fun hideMessages() {
+        tvErrorMessage.visibility   = View.GONE
+        tvSuccessMessage.visibility = View.GONE
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        registerScope.cancel()
+        scope.cancel()
     }
 }
