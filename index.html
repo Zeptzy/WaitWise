@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WaitWise - Smart Queue Management System</title>
+    <title>WaitWise - Login & Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Google Sans', 'Roboto', sans-serif;
         }
 
         body {
@@ -148,6 +148,53 @@
             box-shadow: 0 10px 20px rgba(102,126,234,0.3);
         }
 
+        .btn-google {
+            background: white;
+            border: 2px solid #e0e0e0;
+            color: #333;
+            height: 50px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 1rem;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 10px 0;
+        }
+
+        .btn-google:hover {
+            background: #f8f9fa;
+            border-color: #667eea;
+        }
+
+        .btn-google i {
+            font-size: 1.2rem;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #999;
+            margin: 20px 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .divider span {
+            padding: 0 10px;
+            font-size: 0.8rem;
+        }
+
         .auth-links {
             text-align: center;
             margin-top: 20px;
@@ -235,6 +282,160 @@
             font-weight: 700;
             color: #667eea;
         }
+
+        .google-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .google-modal-content {
+            background: white;
+            border-radius: 28px;
+            width: 90%;
+            max-width: 400px;
+            padding: 28px 24px 32px 24px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        .google-modal-header {
+            margin-bottom: 24px;
+        }
+
+        .google-modal-header img {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 12px;
+        }
+
+        .google-modal-header h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #202124;
+            margin: 0;
+            font-family: 'Google Sans', 'Roboto', sans-serif;
+        }
+
+        .google-account-list {
+            max-height: 320px;
+            overflow-y: auto;
+            margin: 16px 0;
+        }
+
+        .google-account-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 16px;
+            border-radius: 24px;
+            margin-bottom: 4px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .google-account-item:hover {
+            background: #f1f3f4;
+        }
+
+        .google-account-avatar {
+            width: 44px;
+            height: 44px;
+            background: #1a73e8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 500;
+            font-size: 1.2rem;
+            font-family: 'Google Sans', sans-serif;
+            flex-shrink: 0;
+        }
+
+        .google-account-info {
+            flex: 1;
+            text-align: left;
+        }
+
+        .google-account-name {
+            font-weight: 500;
+            color: #202124;
+            font-size: 0.95rem;
+            font-family: 'Google Sans', 'Roboto', sans-serif;
+            margin-bottom: 2px;
+        }
+
+        .google-account-email {
+            font-size: 0.8rem;
+            color: #5f6368;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .google-add-account {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 16px;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            margin-top: 4px;
+        }
+
+        .google-add-account:hover {
+            background: #f1f3f4;
+        }
+
+        .google-add-account i {
+            width: 44px;
+            height: 44px;
+            background: #f1f3f4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #5f6368;
+        }
+
+        .google-add-account span {
+            font-weight: 500;
+            color: #1a73e8;
+            font-size: 0.95rem;
+            font-family: 'Google Sans', 'Roboto', sans-serif;
+        }
+
+        .google-modal-footer {
+            margin-top: 20px;
+            padding-top: 8px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .google-modal-footer button {
+            background: none;
+            border: none;
+            color: #1a73e8;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-family: 'Google Sans', 'Roboto', sans-serif;
+            transition: background 0.2s ease;
+        }
+
+        .google-modal-footer button:hover {
+            background: #f1f3f4;
+        }
     </style>
 </head>
 <body>
@@ -270,11 +471,20 @@
                         <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
                     </div>
                     <button type="submit" class="btn-auth">LOGIN</button>
-                    <div class="auth-links">
-                        <a href="#" onclick="showForm('signup'); return false;">Create an account</a>
-                        <a href="#">Forgot Password?</a>
-                    </div>
                 </form>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <button class="btn-google" onclick="showGoogleModal('login')">
+                    <i class="fab fa-google" style="color: #DB4437;"></i> Sign in with Google
+                </button>
+
+                <div class="auth-links">
+                    <a href="#" onclick="showForm('signup'); return false;">Create an account</a>
+                    <a href="#">Forgot Password?</a>
+                </div>
             </div>
 
             <div class="auth-form" id="signupForm">
@@ -324,6 +534,14 @@
                     </div>
                     <button type="submit" class="btn-auth">SIGN UP</button>
                 </form>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <button class="btn-google" onclick="showGoogleModal('signup')">
+                    <i class="fab fa-google" style="color: #DB4437;"></i> Sign up with Google
+                </button>
             </div>
         </div>
 
@@ -331,6 +549,23 @@
             <i class="fas fa-user-circle" style="font-size: 4rem; color: #667eea; margin-bottom: 20px;"></i>
             <h2>Welcome, <span id="welcomeName" class="welcome-name">Student</span>!</h2>
             <button class="btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <div class="google-modal" id="googleModal">
+        <div class="google-modal-content">
+            <div class="google-modal-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="Google">
+                <h3>Sign in</h3>
+            </div>
+            <div class="google-account-list" id="googleAccountList"></div>
+            <div class="google-add-account" onclick="addGoogleAccount()">
+                <i class="fas fa-plus-circle"></i>
+                <span>Add new account</span>
+            </div>
+            <div class="google-modal-footer">
+                <button onclick="closeGoogleModal()">Cancel</button>
+            </div>
         </div>
     </div>
 
@@ -344,6 +579,147 @@
         }, 2000);
 
         let currentUser = null;
+        let currentGoogleAction = 'login';
+        let savedGoogleAccounts = [];
+
+        function loadGoogleAccounts() {
+            const saved = localStorage.getItem('waitwise_google_accounts');
+            if (saved) {
+                savedGoogleAccounts = JSON.parse(saved);
+            } else {
+                savedGoogleAccounts = [
+                    { name: 'Khujei Ken Amarila', email: 'khujei@gmail.com', avatar: 'K' },
+                    { name: 'Steve Allen Montero', email: 'steveallen@gmail.com', avatar: 'S' }
+                ];
+                saveGoogleAccounts();
+            }
+            displayGoogleAccounts();
+        }
+
+        function saveGoogleAccounts() {
+            localStorage.setItem('waitwise_google_accounts', JSON.stringify(savedGoogleAccounts));
+        }
+
+        function displayGoogleAccounts() {
+            const container = document.getElementById('googleAccountList');
+            if (savedGoogleAccounts.length === 0) {
+                container.innerHTML = '<div style="text-align: center; padding: 20px; color: #5f6368;">No accounts saved</div>';
+                return;
+            }
+            
+            container.innerHTML = savedGoogleAccounts.map(account => `
+                <div class="google-account-item" onclick="selectGoogleAccount('${account.email}')">
+                    <div class="google-account-avatar" style="background: ${getRandomColor(account.email)}">${account.avatar}</div>
+                    <div class="google-account-info">
+                        <div class="google-account-name">${account.name}</div>
+                        <div class="google-account-email">${account.email}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getRandomColor(email) {
+            const colors = ['#1a73e8', '#34a853', '#fbbc04', '#ea4335', '#4285f4', '#0f9d58'];
+            let hash = 0;
+            for (let i = 0; i < email.length; i++) {
+                hash = email.charCodeAt(i) + ((hash << 5) - hash);
+            }
+            return colors[Math.abs(hash) % colors.length];
+        }
+
+        function showGoogleModal(action) {
+            currentGoogleAction = action;
+            loadGoogleAccounts();
+            document.getElementById('googleModal').style.display = 'flex';
+        }
+
+        function closeGoogleModal() {
+            document.getElementById('googleModal').style.display = 'none';
+        }
+
+        function addGoogleAccount() {
+            const name = prompt('Enter your full name:');
+            if (!name) return;
+            
+            const email = prompt('Enter your Gmail address:');
+            if (!email || !email.includes('@gmail.com')) {
+                alert('Please enter a valid Gmail address');
+                return;
+            }
+            
+            const avatar = name.charAt(0).toUpperCase();
+            const newAccount = { name, email, avatar };
+            
+            savedGoogleAccounts.push(newAccount);
+            saveGoogleAccounts();
+            displayGoogleAccounts();
+        }
+
+        function selectGoogleAccount(email) {
+            const account = savedGoogleAccounts.find(acc => acc.email === email);
+            if (account) {
+                if (currentGoogleAction === 'login') {
+                    handleGoogleLogin(account);
+                } else {
+                    handleGoogleSignup(account);
+                }
+            }
+            closeGoogleModal();
+        }
+
+        function handleGoogleLogin(account) {
+            const registeredUsers = JSON.parse(localStorage.getItem('waitwise_users') || '[]');
+            let user = registeredUsers.find(u => u.email === account.email);
+            
+            if (!user) {
+                user = {
+                    name: account.name,
+                    studentId: 'GOOGLE-' + Math.floor(Math.random() * 10000),
+                    course: 'BSIT',
+                    email: account.email,
+                    phone: 'Not provided',
+                    password: 'google-auth'
+                };
+                registeredUsers.push(user);
+                localStorage.setItem('waitwise_users', JSON.stringify(registeredUsers));
+            }
+            
+            currentUser = user;
+            const firstName = currentUser.name.split(' ')[0];
+            document.getElementById('welcomeName').textContent = firstName;
+            document.getElementById('authCard').style.display = 'none';
+            document.getElementById('dashboardPlaceholder').style.display = 'block';
+            showMessage('Signed in with Google! Welcome to WaitWise.');
+        }
+
+        function handleGoogleSignup(account) {
+            const registeredUsers = JSON.parse(localStorage.getItem('waitwise_users') || '[]');
+            const userExists = registeredUsers.some(u => u.email === account.email);
+            
+            if (userExists) {
+                showMessage('Account already exists! Please sign in instead.', true);
+                return;
+            }
+            
+            const newUser = {
+                name: account.name,
+                studentId: 'GOOGLE-' + Math.floor(Math.random() * 10000),
+                course: 'BSIT',
+                email: account.email,
+                phone: 'Not provided',
+                password: 'google-auth'
+            };
+            
+            registeredUsers.push(newUser);
+            localStorage.setItem('waitwise_users', JSON.stringify(registeredUsers));
+            
+            currentUser = newUser;
+            const firstName = currentUser.name.split(' ')[0];
+            document.getElementById('welcomeName').textContent = firstName;
+            document.getElementById('authCard').style.display = 'none';
+            document.getElementById('dashboardPlaceholder').style.display = 'block';
+            showMessage('Google account created successfully! Welcome to WaitWise.');
+        }
 
         function showMessage(message, isError = false) {
             const msgDiv = document.getElementById('successMessage');
