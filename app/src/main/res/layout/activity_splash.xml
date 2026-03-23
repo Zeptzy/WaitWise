@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#003082">
+
+    <!-- UC Logo -->
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_launcher_foreground"
+        android:background="@drawable/circle_white_outline"
+        android:padding="12dp"
+        android:contentDescription="UC Logo" />
+
+    <!-- University Name -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="University of Cebu"
+        android:textColor="#F0C040"
+        android:textSize="12sp"
+        android:letterSpacing="0.12"
+        android:textAllCaps="true"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="16dp" />
+
+    <!-- App Name -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WaitWise"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:fontFamily="serif"
+        android:textStyle="bold"
+        android:layout_marginTop="6dp" />
+
+    <!-- Tagline -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smart Queue Monitoring System"
+        android:textColor="#80FFFFFF"
+        android:textSize="13sp"
+        android:layout_marginTop="4dp" />
+
+    <!-- Loading spinner -->
+    <ProgressBar
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:indeterminateTint="#F0C040"
+        android:layout_marginTop="48dp" />
+
+</LinearLayout>
