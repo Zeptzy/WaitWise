@@ -1,0 +1,6 @@
+com.ucbanilad.waitwise.test.app-androidTest-0 C:\AndroidProjects\WaitWise\app\build\generated\res\resValues\androidTest\debug
+com.ucbanilad.waitwise.test.app-mergeDebugAndroidTestResources-1 C:\AndroidProjects\WaitWise\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.ucbanilad.waitwise.test.app-mergeDebugAndroidTestResources-2 C:\AndroidProjects\WaitWise\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.ucbanilad.waitwise.test.app-merged_res-3 C:\AndroidProjects\WaitWise\app\build\intermediates\merged_res\debugAndroidTest
+com.ucbanilad.waitwise.test.app-annotation-experimental-1.3.0-4 C:\Users\jcmabugat\.gradle\caches\transforms-3\b5d5798af9b0949165e6c1639658b0e7\transformed\annotation-experimental-1.3.0\res
+com.ucbanilad.waitwise.test.app-core-1.5.0-5 C:\Users\jcmabugat\.gradle\caches\transforms-3\cc10bb0778fbf6174e75f6c3ceec3870\transformed\core-1.5.0\res

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "574786558866",
+    "project_id": "waitwise-registrar",
+    "storage_bucket": "waitwise-registrar.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574786558866:android:534b828fe12d462674bf4b",
+        "android_client_info": {
+          "package_name": "com.ucbanilad.waitwise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574786558866-sr7m9n640lh99r29e5gfeq9jbt0ecbmf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ucbanilad.waitwise",
+            "certificate_hash": "eaf0b022395a48ead42f8e6830cb7749085c94c4"
+          }
+        },
+        {
+          "client_id": "574786558866-dgutrnrishtc2rn9hmgot42bcnvj2pft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO7v1fEQA0gCWFJ84kdnJJwlLodAzy8cE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574786558866-dgutrnrishtc2rn9hmgot42bcnvj2pft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

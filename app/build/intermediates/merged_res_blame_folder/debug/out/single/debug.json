@@ -1,0 +1,186 @@
+[
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_waitwise_circle.png.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\waitwise_circle.png"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_avatar_bg.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\avatar_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_badge_status_done.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\badge_status_done.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_badge_status_skipped.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\badge_status_skipped.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_success_bg.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\success_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.ucbanilad.waitwise.app-merged_res-5:/layout_activity_forgot_password.xml.flat",
+        "source": "com.ucbanilad.waitwise.app-main-7:/layout/activity_forgot_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_error_bg.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\error_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_badge_status_waiting.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\badge_status_waiting.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_badge_live.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\badge_live.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_btn_google.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\btn_google.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_badge_status_serving.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\badge_status_serving.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_btn_call_next.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\btn_call_next.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_btn_outline.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\btn_outline.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_camera_badge_bg.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\camera_badge_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_btn_primary.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\btn_primary.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_chip_selected.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\chip_selected.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_chip_default.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\chip_default.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_ic_google.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\ic_google.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_badge_queue_number.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\badge_queue_number.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_dot_green.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\dot_green.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\layout_activity_dashboard.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\layout\\activity_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\layout_item_queue_student.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\layout\\item_queue_student.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_circle_white_outline.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\circle_white_outline.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_dot_gray.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\dot_gray.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\drawable_btn_skip.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\drawable\\btn_skip.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\layout_activity_forgot_password.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\layout\\activity_forgot_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-merged_res-5:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\jcmabugat\\.gradle\\daemon\\8.4\\com.ucbanilad.waitwise.app-main-7:\\mipmap-hdpi\\ic_launcher_round.webp"
+    }
+]
