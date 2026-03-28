@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="bottom_nav_color">#003082</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">WaitWise</string>
+    <string name="default_web_client_id" translatable="false">574786558866-dgutrnrishtc2rn9hmgot42bcnvj2pft.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">574786558866</string>
+    <string name="google_api_key" translatable="false">AIzaSyDO7v1fEQA0gCWFJ84kdnJJwlLodAzy8cE</string>
+    <string name="google_app_id" translatable="false">1:574786558866:android:534b828fe12d462674bf4b</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDO7v1fEQA0gCWFJ84kdnJJwlLodAzy8cE</string>
+    <string name="google_storage_bucket" translatable="false">waitwise-registrar.firebasestorage.app</string>
+    <string name="project_id" translatable="false">waitwise-registrar</string>
+    <style name="Theme.WaitWise" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">#003082</item>
+        <item name="colorPrimaryVariant">#001F50</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        
+        <item name="colorSecondary">#FFC107</item>
+        <item name="colorSecondaryVariant">#FFA000</item>
+        <item name="colorOnSecondary">#000000</item>
+
+        
+        <item name="android:statusBarColor">#003082</item>
+
+        
+        <item name="android:windowBackground">#F4F5F7</item>
+    </style>
+    <style name="Theme.WaitWise.NoActionBar" parent="Theme.WaitWise">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+</resources>
