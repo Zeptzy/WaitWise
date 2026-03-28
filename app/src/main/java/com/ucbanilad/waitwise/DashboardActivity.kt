@@ -30,6 +30,7 @@ data class QueueStudent(
     val userId: String = "",
     val documentId: String = ""
 )
+// ── Adapter ────────────────────────────────────────────────────────────── EXAMPLE
 
 enum class QueueStatus { WAITING, SERVING, SKIPPED, DONE }
 
