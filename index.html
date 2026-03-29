@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WaitWise — Smart Queue Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loading-inner">
+      <img src="WaitWise_Logo.png" alt="WaitWise" class="loading-logo-img" />
+      <p class="loading-brand">WaitWise</p>
+      <p class="loading-tagline">Smart Queue Management System</p>
+      <div class="loading-bar-wrap"><div class="loading-bar-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- MAIN WRAPPER -->
+  <div id="mainWrapper" class="main-wrapper" style="display:none;">
+
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+      <div class="deco-circle c1"></div>
+      <div class="deco-circle c2"></div>
+      <div class="deco-circle c3"></div>
+      <div class="left-content">
+        <img src="WaitWise_Logo.png" alt="WaitWise Logo" class="brand-logo-img" />
+        <h1 class="brand-name">WaitWise</h1>
+        <p class="brand-tagline">Smart Queue Monitoring &amp;<br />Virtual Queuing System</p>
+        <div class="feature-pills">
+          <div class="feature-pill"><i class="fas fa-mobile-alt"></i><span>Join queue remotely</span></div>
+          <div class="feature-pill"><i class="fas fa-bell"></i><span>Get turn notifications</span></div>
+          <div class="feature-pill"><i class="fas fa-chart-bar"></i><span>Real-time monitoring</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+
+      <div class="mobile-logo">
+        <img src="WaitWise_Logo.png" alt="WaitWise" class="mobile-logo-img" />
+        <span>WaitWise</span>
+      </div>
+
+      <!-- WELCOME CARD -->
+      <div id="welcomeCard" class="auth-card active">
+        <div class="welcome-logo-wrap">
+          <img src="WaitWise_Logo.png" alt="WaitWise Logo" class="welcome-logo-img" />
+        </div>
+        <h2 class="card-title">Welcome to WaitWise</h2>
+        <p class="card-sub">Smart Queue Management System for Registrar Services</p>
+        <div class="welcome-actions">
+          <button class="btn-main" onclick="switchCard('loginCard')"><i class="fas fa-sign-in-alt"></i> Login</button>
+          <button class="btn-outline" onclick="switchCard('signupCard')"><i class="fas fa-user-plus"></i> Create Account</button>
+        </div>
+        <div class="divider"><span>OR</span></div>
+        <button class="btn-google" onclick="openGoogleModal()"><i class="fab fa-google"></i> Continue with Google</button>
+        <p class="footer-note">© 2026 WaitWise — Smart Queue Management System</p>
+      </div>
+
+      <!-- LOGIN CARD -->
+      <div id="loginCard" class="auth-card">
+        <button class="back-btn" onclick="switchCard('welcomeCard')"><i class="fas fa-arrow-left"></i></button>
+        <div class="card-logo-img-wrap">
+          <img src="WaitWise_Logo.png" alt="WaitWise" class="card-logo-img" />
+        </div>
+        <h2 class="card-title">Sign In</h2>
+        <p class="card-sub">Welcome back! Enter your credentials to continue.</p>
+        <div id="loginAlert" class="alert-box" style="display:none;"></div>
+        <form id="loginForm" onsubmit="handleLogin(event)" novalidate>
+          <div class="field-group">
+            <label class="field-label">Email Address</label>
+            <div class="field-wrap">
+              <i class="fas fa-envelope field-icon"></i>
+              <input type="email" id="loginEmail" class="field-input" placeholder="you@email.com" required />
+            </div>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Password</label>
+            <div class="field-wrap">
+              <i class="fas fa-lock field-icon"></i>
+              <input type="password" id="loginPassword" class="field-input" placeholder="Enter your password" required />
+              <button type="button" class="eye-btn" onclick="togglePw('loginPassword', this)"><i class="fas fa-eye"></i></button>
+            </div>
+          </div>
+          <!-- Remember Me + Forgot Password -->
+          <div class="login-options-row">
+            <label class="check-label">
+              <input type="checkbox" id="rememberMe" />
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="forgot-link" onclick="switchCard('forgotCard'); return false;">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn-main w-100 mt-2">Sign In</button>
+        </form>
+        <div class="divider"><span>OR</span></div>
+        <button class="btn-google" onclick="openGoogleModal()"><i class="fab fa-google"></i> Sign in with Google</button>
+        <p class="switch-text">Don't have an account? <a href="#" class="switch-link" onclick="switchCard('signupCard'); return false;">Register here</a></p>
+      </div>
+
+      <!-- FORGOT PASSWORD CARD -->
+      <div id="forgotCard" class="auth-card">
+        <button class="back-btn" onclick="switchCard('loginCard')"><i class="fas fa-arrow-left"></i></button>
+        <div class="card-logo-img-wrap">
+          <img src="WaitWise_Logo.png" alt="WaitWise" class="card-logo-img" />
+        </div>
+        <h2 class="card-title">Forgot Password?</h2>
+        <p class="card-sub">Enter your registered email and we'll send you a reset link.</p>
+        <div id="forgotAlert" class="alert-box" style="display:none;"></div>
+        <form id="forgotForm" onsubmit="handleForgotPassword(event)" novalidate>
+          <div class="field-group">
+            <label class="field-label">Email Address</label>
+            <div class="field-wrap">
+              <i class="fas fa-envelope field-icon"></i>
+              <input type="email" id="forgotEmail" class="field-input" placeholder="Enter your registered email" required />
+            </div>
+            <p class="field-hint">A password reset link will be sent to this email.</p>
+          </div>
+          <button type="submit" class="btn-main w-100"><i class="fas fa-paper-plane me-2"></i>Send Reset Link</button>
+        </form>
+        <p class="switch-text mt-3">Remember your password? <a href="#" class="switch-link" onclick="switchCard('loginCard'); return false;">Sign In</a></p>
+      </div>
+
+      <!-- RESET LINK SENT CARD -->
+      <div id="resetSentCard" class="auth-card">
+        <div class="reset-success-icon"><i class="fas fa-envelope-open-text"></i></div>
+        <h2 class="card-title">Check Your Email</h2>
+        <p class="card-sub" id="resetSentSub">We've sent a password reset link to your email. Please check your inbox and follow the instructions.</p>
+        <div class="reset-info-box">
+          <i class="fas fa-info-circle"></i>
+          <span>Didn't receive the email? Check your spam folder or try again in a few minutes.</span>
+        </div>
+        <button class="btn-main w-100 mt-4" onclick="switchCard('forgotCard')"><i class="fas fa-redo me-2"></i>Try Again</button>
+        <button class="btn-outline w-100 mt-2" onclick="switchCard('loginCard')"><i class="fas fa-sign-in-alt me-2"></i>Back to Sign In</button>
+      </div>
+
+      <!-- SIGN UP CARD -->
+      <div id="signupCard" class="auth-card">
+        <button class="back-btn" onclick="switchCard('welcomeCard')"><i class="fas fa-arrow-left"></i></button>
+        <div class="card-logo-img-wrap">
+          <img src="WaitWise_Logo.png" alt="WaitWise" class="card-logo-img" />
+        </div>
+        <h2 class="card-title">Create Account</h2>
+        <p class="card-sub">Join WaitWise and skip the registrar line.</p>
+        <div id="signupAlert" class="alert-box" style="display:none;"></div>
+        <form id="signupForm" onsubmit="handleSignup(event)" novalidate>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="field-group">
+                <label class="field-label">Full Name</label>
+                <div class="field-wrap">
+                  <i class="fas fa-user field-icon"></i>
+                  <input type="text" id="signupName" class="field-input" placeholder="Your full name" required />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="field-group">
+                <label class="field-label">Student ID <span class="field-hint-inline">(numbers only)</span></label>
+                <div class="field-wrap">
+                  <i class="fas fa-id-card field-icon"></i>
+                  <!--
+                    inputmode="numeric" → shows numeric keyboard on phones
+                    pattern="\d*"      → hint to browsers: digits only
+                    oninput            → strips any non-digit character in real time
+                  -->
+                  <input type="text"
+                         id="signupId"
+                         class="field-input"
+                         placeholder="e.g. 20210001"
+                         inputmode="numeric"
+                         pattern="\d*"
+                         oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                         maxlength="12"
+                         required />
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="field-group">
+                <label class="field-label">Course / Program</label>
+                <div class="field-wrap">
+                  <i class="fas fa-graduation-cap field-icon"></i>
+                  <select id="signupCourse" class="field-input field-select" required>
+                    <option value="">Select your course</option>
+                    <option value="BSIT">BSIT — Information Technology</option>
+                    <option value="BSCS">BSCS — Computer Science</option>
+                    <option value="BSIS">BSIS — Information Systems</option>
+                    <option value="BSBA">BSBA — Business Administration</option>
+                    <option value="BSED">BSED — Secondary Education</option>
+                    <option value="BSE">BSE — Elementary Education</option>
+                    <option value="BSA">BSA — Accountancy</option>
+                    <option value="BSHM">BSHM — Hospitality Management</option>
+                    <option value="BSTM">BSTM — Tourism Management</option>
+                    <option value="BSCE">BSCE — Civil Engineering</option>
+                    <option value="BSEE">BSEE — Electrical Engineering</option>
+                    <option value="BSME">BSME — Mechanical Engineering</option>
+                    <option value="BSECE">BSECE — Electronics Engineering</option>
+                    <option value="BSARCH">BSARCH — Architecture</option>
+                    <option value="BSN">BSN — Nursing</option>
+                    <option value="BSPSY">BSPSY — Psychology</option>
+                    <option value="BSCrim">BSCrim — Criminology</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="field-group">
+                <label class="field-label">Email Address</label>
+                <div class="field-wrap">
+                  <i class="fas fa-envelope field-icon"></i>
+                  <input type="email" id="signupEmail" class="field-input" placeholder="you@email.com" required />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="field-group">
+                <label class="field-label">Phone Number</label>
+                <div class="field-wrap">
+                  <i class="fas fa-phone field-icon"></i>
+                  <input type="tel" id="signupPhone" class="field-input" placeholder="09XX-XXX-XXXX" required />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="field-group">
+                <label class="field-label">Password</label>
+                <div class="field-wrap">
+                  <i class="fas fa-lock field-icon"></i>
+                  <input type="password" id="signupPassword" class="field-input" placeholder="Create a password" required />
+                  <button type="button" class="eye-btn" onclick="togglePw('signupPassword', this)"><i class="fas fa-eye"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="field-group">
+                <label class="field-label">Confirm Password</label>
+                <div class="field-wrap">
+                  <i class="fas fa-lock field-icon"></i>
+                  <input type="password" id="signupConfirm" class="field-input" placeholder="Re-enter password" required />
+                  <button type="button" class="eye-btn" onclick="togglePw('signupConfirm', this)"><i class="fas fa-eye"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terms & Conditions checkbox (above the Create Account button) -->
+          <div class="terms-wrap mt-3">
+            <label class="check-label" id="termsCheckLabel">
+              <input type="checkbox" id="agreeTerms" />
+              <span>
+                I agree to the
+                <a href="#" class="auth-link" onclick="openTermsModal(); return false;">Terms &amp; Conditions</a>
+                and
+                <a href="#" class="auth-link" onclick="openPrivacyModal(); return false;">Privacy Policy</a>
+              </span>
+            </label>
+            <p class="field-helper" id="termsError" style="display:none;">You must agree to the Terms &amp; Conditions and Privacy Policy.</p>
+          </div>
+
+          <button type="submit" class="btn-main w-100 mt-3"><i class="fas fa-user-plus me-2"></i>Create Account</button>
+        </form>
+        <div class="divider"><span>OR</span></div>
+        <button class="btn-google" onclick="openGoogleModal()"><i class="fab fa-google"></i> Sign up with Google</button>
+        <p class="switch-text">Already have an account? <a href="#" class="switch-link" onclick="switchCard('loginCard'); return false;">Sign in here</a></p>
+      </div>
+
+      <!-- LOGGED-IN CARD -->
+      <div id="loggedInCard" class="auth-card">
+        <div class="loggedin-avatar" id="loggedInAvatar">S</div>
+        <h2 class="card-title" id="loggedInName">Welcome!</h2>
+        <p class="card-sub" id="loggedInSub">You are now logged in to WaitWise.</p>
+        <div class="loggedin-info" id="loggedInInfo"></div>
+
+        <!-- Queue Status Section -->
+        <div id="queueStatusSection" class="queue-status-section" style="display:none;">
+          <div class="qs-header">
+            <i class="fas fa-ticket-alt"></i>
+            <span>Your Active Queue</span>
+          </div>
+          <div id="queueStatusBody" class="qs-body"></div>
+        </div>
+
+        <button class="btn-outline w-100 mt-3" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        <p class="footer-note mt-3">© 2026 WaitWise — Smart Queue Management System</p>
+      </div>
+
+    </div><!-- /right-panel -->
+  </div><!-- /main-wrapper -->
+
+  <!-- GOOGLE MODAL -->
+  <div id="googleModal" class="modal-overlay" onclick="closeGoogleModal(event)">
+    <div class="google-modal">
+      <div class="gm-header">
+        <div class="google-g">G</div>
+        <h3 class="gm-title">Sign in with Google</h3>
+        <p class="gm-sub">Choose an account to continue to WaitWise</p>
+      </div>
+      <div class="gm-accounts" id="gmAccounts"></div>
+      <div class="gm-add" onclick="addGoogleAccount()">
+        <div class="gm-add-icon"><i class="fas fa-plus"></i></div>
+        <span>Add another account</span>
+      </div>
+      <div class="gm-footer">
+        <button class="gm-cancel" onclick="closeGoogleModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TERMS & CONDITIONS MODAL -->
+  <div id="termsModal" class="modal-overlay" onclick="closeTermsModal(event)">
+    <div class="info-modal">
+      <div class="info-modal-header">
+        <h3><i class="fas fa-file-contract me-2"></i>Terms &amp; Conditions</h3>
+        <button class="info-modal-close" onclick="closeTermsModal()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="info-modal-body">
+        <p class="info-modal-updated">Last updated: January 2026</p>
+        <h4>1. Acceptance of Terms</h4>
+        <p>By accessing and using WaitWise, you agree to be bound by these Terms and Conditions. If you do not agree, please do not use the system.</p>
+        <h4>2. Use of the System</h4>
+        <p>WaitWise is a queue management system for the University Registrar Office. You may only use it for legitimate registrar transactions. Misuse, including providing false information or abusing the queue system, may result in account suspension.</p>
+        <h4>3. Account Responsibility</h4>
+        <p>You are responsible for maintaining the confidentiality of your account credentials. You must notify the registrar office immediately of any unauthorized use of your account.</p>
+        <h4>4. Queue Conduct</h4>
+        <p>Students must be present within the allowed time window when their queue number is called. Repeated no-shows may result in restrictions on future queue bookings.</p>
+        <h4>5. Accuracy of Information</h4>
+        <p>You agree to provide accurate, current, and complete information during registration and when using the system.</p>
+        <h4>6. Modifications</h4>
+        <p>The university reserves the right to modify these terms at any time. Continued use of WaitWise after changes constitutes acceptance of the new terms.</p>
+      </div>
+      <div class="info-modal-footer">
+        <button class="btn-main" onclick="closeTermsModal()">I Understand</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIVACY POLICY MODAL -->
+  <div id="privacyModal" class="modal-overlay" onclick="closePrivacyModal(event)">
+    <div class="info-modal">
+      <div class="info-modal-header">
+        <h3><i class="fas fa-shield-alt me-2"></i>Privacy Policy</h3>
+        <button class="info-modal-close" onclick="closePrivacyModal()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="info-modal-body">
+        <p class="info-modal-updated">Last updated: January 2026</p>
+        <h4>1. Information We Collect</h4>
+        <p>We collect information you provide during registration: your name, student ID, course, email address, and phone number. We also collect queue transaction data including request type and wait times.</p>
+        <h4>2. How We Use Your Information</h4>
+        <p>Your information is used solely to manage your queue transactions, send notifications about your queue status, and improve the registrar service experience.</p>
+        <h4>3. Data Storage</h4>
+        <p>Your data is stored securely in our university systems and retained for the duration of your enrollment and a reasonable period thereafter.</p>
+        <h4>4. Notifications</h4>
+        <p>By registering, you consent to receiving SMS and in-app notifications related to your queue status and registrar announcements.</p>
+        <h4>5. Data Sharing</h4>
+        <p>We do not sell or share your personal information with third parties outside the university.</p>
+        <h4>6. Your Rights</h4>
+        <p>You have the right to access, correct, or request deletion of your personal data. Please contact the Registrar Office to exercise these rights.</p>
+      </div>
+      <div class="info-modal-footer">
+        <button class="btn-main" onclick="closePrivacyModal()">I Understand</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
