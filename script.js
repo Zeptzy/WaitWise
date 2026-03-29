@@ -1,15 +1,7 @@
-/* ============================================================
-   WaitWise — script.js
-   ============================================================ */
 
-/* ── STATE ── */
 let currentUser    = null;
 let googleAccounts = [];
 
-/* ── MOCK QUEUE DATA
-   In a real app this would come from your Laravel backend.
-   For now we show a sample queue so the logged-in card looks complete.
-──────────────────────────────────────────────────────────────── */
 const MOCK_QUEUE = [
   { num: 'A001', type: 'Document Request', name: 'Student Name', waitMin: 5,  status: 'waiting' },
 ];
@@ -188,11 +180,6 @@ function handleForgotPassword(event) {
   // Update the "sent to" message on the next card
   const sub = document.getElementById('resetSentSub');
   if (sub) sub.textContent = `We've sent a password reset link to ${email}. Please check your inbox.`;
-
-  // In a real app, you'd call your Laravel API here:
-  // fetch('/api/password/reset', { method: 'POST', body: JSON.stringify({ email }) })
-  // For now we just simulate the send and show the success card.
-
   document.getElementById('forgotForm').reset();
   switchCard('resetSentCard');
 }
